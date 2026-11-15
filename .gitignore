@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editores
+.vscode/
+.idea/
+
+# Excel (temporários)
+~$*
+
+# SQLite/Beekeeper (temporários)
+*.db-journal
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Segredos
+.env
