@@ -12,3 +12,4 @@ cursor = conexao.cursor()
 cursor.execute("SELECT COUNT(*) FROM emissoes")
 print(cursor.fetchone()[0])
 conexao.close()
+
