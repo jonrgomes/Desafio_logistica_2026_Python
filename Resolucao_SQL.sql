@@ -25,4 +25,18 @@ FROM emissoes;
 
 -- Desafio 3: Contando por tipo de seviço:
 
+-- contado de forma específica:
+SELECT COUNT(*) AS convencional
+FROM emissoes
+WHERE tipo_servico = 'Convencional';
+
+-- Contado todos de uma vez:
+SELECT
+  tipo_servico,
+  COUNT(*) AS emissoes
+FROM emissoes
+GROUP BY tipo_servico
+ORDER BY emissoes DESC;
+
+
 
