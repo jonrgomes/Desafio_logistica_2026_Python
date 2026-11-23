@@ -39,13 +39,14 @@ GROUP BY tipo_servico
 ORDER BY emissoes DESC;
 
 -- Percentual por modalidade: 
+--- calculo sem percentual
 SELECT 
   COUNT(*) AS total,
   SUM(CASE WHEN modalidade_frete = 'CIF' THE 1 ELSE 0 END) AS cif,
   SUM(CASE WHEN modalidade_frete = 'FOB' THE 1 ELSE 0 END) AS fob
 FROM emissoes;
 
---- COM PERCENTUAL
+--- calculo com percentual
 SELECT
     modalidade_frete,
     COUNT(*) AS emissoes,
