@@ -38,7 +38,7 @@ FROM emissoes
 GROUP BY tipo_servico
 ORDER BY emissoes DESC;
 
--- Percentual por modalidade: 
+-- Desafio 4:  Percentual por modalidade: 
 -- calculo sem percentual
 SELECT 
   COUNT(*) AS total,
@@ -54,3 +54,7 @@ SELECT
 FROM emissoes
 GROUP BY modalidade_frete;
 
+-- Desafio 5: Maior ou menor;
+-- So o valor
+SELECT MAX(frete_total) AS maior_frete
+FROM emissoes;
