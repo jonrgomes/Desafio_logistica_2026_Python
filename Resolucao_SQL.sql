@@ -58,3 +58,9 @@ GROUP BY modalidade_frete;
 -- So o valor
 SELECT MAX(frete_total) AS maior_frete
 FROM emissoes;
+
+-- A linha inteira com ORDER BAY e LIMIT
+SELECT numero_documento, id_rota, frete_total
+FROM emissoes
+ORDER BY frete_total DESC
+LIMIT 1;
