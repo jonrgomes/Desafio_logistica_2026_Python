@@ -54,13 +54,32 @@ SELECT
 FROM emissoes
 GROUP BY modalidade_frete;
 
--- Desafio 5: Maior ou menor;
--- So o valor
-SELECT MAX(frete_total) AS maior_frete
-FROM emissoes;
+-- Desafio 5: Maior ou menor:
+-- Somente o valor
+SELECT MAX(frete_total) As maior_frete
+FROM emissoes; 
 
--- A linha inteira com ORDER BAY e LIMIT
-SELECT numero_documento, id_rota, frete_total
-FROM emissoes
+-- Maior frete:
+SELECT numero_documento, id_rota, valor_mercadoria
+FROM emissoes 
 ORDER BY frete_total DESC
 LIMIT 1;
+
+-- Menor frete:
+SELECT numero_documento, id_rota, valor_mercadoria
+FROM emissoes 
+ORDER BY frete_total ASC
+LIMIT 1;
+
+-- Maior valor de mercadoria
+SELECT numero_documento, id_rota, valor_mercadoria
+FROM emissoes
+ORDER BY valor_mercadoria DESC
+LIMIT 1;
+
+-- Os dois resultados juntos:
+SELECT 'Maior frete' AS indicador, numero_documento, id_rota, frete_total AS valor 
+FROM (SELECT * FROM emissoes ORDER BY frete_total DESC LIMIT 1)
+UNION ALL
+SELECT 'Valor mercadoria', numero_documento, id_rota, valor_mercadoria
+FROM (SELECT * FROM emissoes ORDER BY valor_mercadoria DESC LIMIT 1);
