@@ -97,3 +97,8 @@ SELECT
 FROM emissoes
 GROUP BY status
 ORDER BY emissoes DESC; 
+
+-- Contar Ignorando Maiúscula
+SELECT COUNT(*) AS entregues_like
+FROM emissoes
+WHERE status LIKE 'Entregue';
