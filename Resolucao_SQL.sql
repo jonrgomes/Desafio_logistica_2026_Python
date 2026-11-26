@@ -83,3 +83,17 @@ FROM (SELECT * FROM emissoes ORDER BY frete_total DESC LIMIT 1)
 UNION ALL
 SELECT 'Valor mercadoria', numero_documento, id_rota, valor_mercadoria
 FROM (SELECT * FROM emissoes ORDER BY valor_mercadoria DESC LIMIT 1);
+
+-- Desafio 6 - Filtrando por status
+-- Filtrando as entregues:
+SELECT COUNT(*) AS entregues
+FROM emissoes
+WHERE status = 'Entregue';
+
+-- Descobrir a Sujeira
+SELECT
+  '[' || status || ']' AS status_visivel,
+  COUNT(*)            AS emissoes
+FROM emissoes
+GROUP BY status
+ORDER BY emissoes DESC; 
